@@ -68,20 +68,20 @@ $stmt = $pdo->query($sql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Betty's Book Banning and Brdrink_idge Building</title>
+    <title>Betty's Resturant Drink Manager</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Hero Section -->
     <div class="hero-section">
-        <h1 class="hero-title">Betty's Book Banning and Brdrink_idge Building</h1>
-        <p class="hero-subtitle">"Because nothing brings a community together like collectively decdrink_iding what others shouldn't read!"</p>
+        <h1 class="hero-title">Betty's Resturant Drink Manager</h1>
+        <p class="hero-subtitle">"Because nothing brings a community together like highly carbonated and sugary beverages!"</p>
         
         <!-- Search moved to hero section -->
         <div class="hero-search">
-            <h2>Search for a Book to Ban</h2>
+            <h2>Search for Drink</h2>
             <form action="" method="GET" class="search-form">
-                <label for="search">Search by cup_size:</label>
+                <label for="search">Search by Brand:</label>
                 <input type="text" id="search" name="search" required>
                 <input type="submit" value="Search">
             </form>
@@ -93,10 +93,10 @@ $stmt = $pdo->query($sql);
                         <table>
                             <thead>
                                 <tr>
-                                    <th>drink_id</th>
-                                    <th>brand</th>
-                                    <th>cup_size</th>
-                                    <th>price</th>
+                                    <th>ID</th>
+                                    <th>Brand</th>
+                                    <th>Sizes</th>
+                                    <th>Price</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -110,7 +110,7 @@ $stmt = $pdo->query($sql);
                                     <td>
                                         <form action="index5.php" method="post" style="display:inline;">
                                             <input type="hidden" name="delete_drink_id" value="<?php echo $row['drink_id']; ?>">
-                                            <input type="submit" value="Ban!">
+                                            <input type="submit" value="Remove">
                                         </form>
                                     </td>
                                 </tr>
@@ -127,7 +127,7 @@ $stmt = $pdo->query($sql);
 
     <!-- Table section with container -->
     <div class="table-container">
-        <h2>All data in Database</h2>
+        <h2>All drinks in Database</h2>
         <table class="half-width-left-align">
             <thead>
                 <tr>
@@ -148,7 +148,7 @@ $stmt = $pdo->query($sql);
                     <td>
                         <form action="index5.php" method="post" style="display:inline;">
                             <input type="hdrink_idden" name="delete_drink_id" value="<?php echo $row['drink_id']; ?>">
-                            <input type="submit" value="Ban!">
+                            <input type="submit" value="Remove">
                         </form>
                     </td>
                 </tr>
@@ -159,18 +159,18 @@ $stmt = $pdo->query($sql);
 
     <!-- Form section with container -->
     <div class="form-container">
-        <h2>Condemn a Book Today</h2>
+        <h2>Add A Drink</h2>
         <form action="index5.php" method="post">
-            <label for="brand">brand:</label>
+            <label for="brand">Brand:</label>
             <input type="text" id="brand" name="brand" required>
             <br><br>
-            <label for="cup_size">cup_size:</label>
+            <label for="cup_size">Sizes:</label>
             <input type="text" id="cup_size" name="cup_size" required>
             <br><br>
-            <label for="price">price:</label>
+            <label for="price">Price:</label>
             <input type="float" id="price" name="price" required>
             <br><br>
-            <input type="submit" value="Condemn Book">
+            <input type="submit" value="Add Drink to Menu">
         </form>
     </div>
 </body>
