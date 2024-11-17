@@ -32,7 +32,7 @@ try {
 $search_results = null;
 if (isset($_GET['search']) && !empty($_GET['search'])) {
     $search_term = '%' . $_GET['search'] . '%';
-    $search_sql = 'SELECT drink_id, brand, cup_size, publisher FROM data WHERE cup_size LIKE :search';
+    $search_sql = 'SELECT drink_id, brand, cup_size, price FROM data WHERE brand LIKE :search';
     $search_stmt = $pdo->prepare($search_sql);
     $search_stmt->execute(['search' => $search_term]);
     $search_results = $search_stmt->fetchAll();
@@ -40,15 +40,15 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['brand']) && isset($_POST['cup_size']) && isset($_POST['publisher'])) {
+    if (isset($_POST['brand']) && isset($_POST['cup_size']) && isset($_POST['price'])) {
         // Insert new entry
         $brand = htmlspecialchars($_POST['brand']);
         $cup_size = htmlspecialchars($_POST['cup_size']);
-        $publisher = htmlspecialchars($_POST['publisher']);
+        $price = htmlspecialchars($_POST['price']);
         
-        $insert_sql = 'INSERT INTO data (brand, cup_size, publisher) VALUES (:brand, :cup_size, :publisher)';
+        $insert_sql = 'INSERT INTO data (brand, cup_size, price) VALUES (:brand, :cup_size, :price)';
         $stmt_insert = $pdo->prepare($insert_sql);
-        $stmt_insert->execute(['brand' => $brand, 'cup_size' => $cup_size, 'publisher' => $publisher]);
+        $stmt_insert->execute(['brand' => $brand, 'cup_size' => $cup_size, 'price' => $price]);
     } elseif (isset($_POST['delete_drink_id'])) {
         // Delete an entry
         $delete_drink_id = (int) $_POST['delete_drink_id'];
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Get all data for main table
-$sql = 'SELECT drink_id, brand, cup_size, publisher FROM data';
+$sql = 'SELECT drink_id, brand, cup_size, price FROM data';
 $stmt = $pdo->query($sql);
 ?>
 
@@ -96,7 +96,7 @@ $stmt = $pdo->query($sql);
                                     <th>drink_id</th>
                                     <th>brand</th>
                                     <th>cup_size</th>
-                                    <th>Publisher</th>
+                                    <th>price</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -106,7 +106,7 @@ $stmt = $pdo->query($sql);
                                     <td><?php echo htmlspecialchars($row['drink_id']); ?></td>
                                     <td><?php echo htmlspecialchars($row['brand']); ?></td>
                                     <td><?php echo htmlspecialchars($row['cup_size']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['publisher']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['price']); ?></td>
                                     <td>
                                         <form action="index5.php" method="post" style="display:inline;">
                                             <input type="hidden" name="delete_drink_id" value="<?php echo $row['drink_id']; ?>">
@@ -134,7 +134,7 @@ $stmt = $pdo->query($sql);
                     <th>drink_id</th>
                     <th>brand</th>
                     <th>cup_size</th>
-                    <th>Publisher</th>
+                    <th>price</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -144,7 +144,7 @@ $stmt = $pdo->query($sql);
                     <td><?php echo htmlspecialchars($row['drink_id']); ?></td>
                     <td><?php echo htmlspecialchars($row['brand']); ?></td>
                     <td><?php echo htmlspecialchars($row['cup_size']); ?></td>
-                    <td><?php echo htmlspecialchars($row['publisher']); ?></td>
+                    <td><?php echo htmlspecialchars($row['price']); ?></td>
                     <td>
                         <form action="index5.php" method="post" style="display:inline;">
                             <input type="hdrink_idden" name="delete_drink_id" value="<?php echo $row['drink_id']; ?>">
@@ -167,8 +167,8 @@ $stmt = $pdo->query($sql);
             <label for="cup_size">cup_size:</label>
             <input type="text" id="cup_size" name="cup_size" required>
             <br><br>
-            <label for="publisher">Publisher:</label>
-            <input type="float" id="publisher" name="publisher" required>
+            <label for="price">price:</label>
+            <input type="float" id="price" name="price" required>
             <br><br>
             <input type="submit" value="Condemn Book">
         </form>
