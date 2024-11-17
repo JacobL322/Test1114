@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `data` (
   `drink_id` int NOT NULL,
   `brand` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
-  `cup_size` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
+  `title` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
   `price` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -38,7 +38,7 @@ CREATE TABLE `data` (
 -- Dumping data for table `data`
 --
 
-INSERT INTO `data` (`drink_id`, `brand`, `cup_size`, `price`) VALUES
+INSERT INTO `data` (`drink_id`, `brand`, `title`, `price`) VALUES
 (2, 'Pepsi Zero', 'Small', 2),
 (3, 'Root Beer', 'Small, Medium, Large', 5),
 (5, 'Coke', 'Large', 2),

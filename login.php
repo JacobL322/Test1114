@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Betty's Book Banning</title>
+    <cup_size>Login - Betty's Book Banning</cup_size>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>

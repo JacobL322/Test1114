@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `books` (
   `id` int NOT NULL,
   `author` varchar(45) COLLATE utf8mb4_general_ci NOT NULL,
-  `title` varchar(45) COLLATE utf8mb4_general_ci NOT NULL,
+  `cup_size` varchar(45) COLLATE utf8mb4_general_ci NOT NULL,
   `publisher` varchar(45) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -38,7 +38,7 @@ CREATE TABLE `books` (
 -- Dumping data for table `books`
 --
 
-INSERT INTO `books` (`id`, `author`, `title`, `publisher`) VALUES
+INSERT INTO `books` (`id`, `author`, `cup_size`, `publisher`) VALUES
 (1, 'Miller', 'My Life', 'Penguin'),
 (2, 'Smith', 'Your Life', 'Lion'),
 (3, 'Jones', 'Their Life', 'Penguin'),
