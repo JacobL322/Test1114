@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #E6C9AA;
     color: #333;
     max-width: 1200px;
     margin: 0 auto;
@@ -23,7 +23,7 @@ table {
 th, td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #E8AE87;
 }
 
 .half-width-left-align {
@@ -68,7 +68,7 @@ h1, h2 {
 .search-container {
     margin-bottom: 40px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #E6C9AA;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
@@ -102,11 +102,11 @@ h1, h2 {
 }
 
 .hero-section {
-    background-color: #fff;
+    background-color: #E6C9AA;
     padding: 40px 20px;
     margin: -20px -20px 40px -20px; /* Negative margin to stretch full width */
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #E8AE87;
 }
 
 .hero-title {
@@ -126,7 +126,7 @@ h1, h2 {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #E8AE87;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
